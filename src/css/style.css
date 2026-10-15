@@ -1,12 +1,19 @@
-/* Vinheria Agnello — base (CP2) */
+/* Vinheria Agnello — base (CP2, identidade bordô rico) */
 :root {
-    --adega: #1e0c0e;
-    --oxblood: #5e1b25;
-    --safra: #c29a2b;
-    --rotulo: #efe5ce;
-    --parreira: #66785b;
-    --tinta: #2b2320;
-    --fundo: #faf7f2;
+    --adega: #2a0b10;
+    --bordo: #7a1e2e;
+    --bordo-escuro: #4a0f1b;
+    --oxblood: #7a1e2e;
+    --safra: #d9a441;
+    --safra-clara: #f0be55;
+    --ouro-escuro: #a5761f;
+    --creme: #fbf4e6;
+    --rotulo: #fffdf4;
+    --areia: #e7d3ac;
+    --tinta: #2e2120;
+    --muted: #7a6a5e;
+    --parreira: #5f7052;
+    --fundo: #fbf4e6;
 }
 
 * { box-sizing: border-box; }
@@ -16,26 +23,29 @@ body {
     margin: 0;
     background: var(--fundo);
     color: var(--tinta);
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 header {
-    background: var(--adega);
+    background: linear-gradient(135deg, #2a0b10 0%, #5c1420 55%, #7a1e2e 100%);
     color: #fff;
-    padding: 16px;
+    padding: 22px 20px 18px 20px;
+    border-top: 4px solid var(--safra);
+    box-shadow: 0 4px 18px rgba(42, 11, 16, 0.35);
 }
 
 #topo {
     margin: 0;
     font-family: Marcellus, Georgia, serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.02em;
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    color: #fff8e8;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 8px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 nav li {
@@ -44,95 +54,123 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #f7e8c9;
     text-decoration: none;
     font-weight: 600;
 }
 
 main {
-    padding: 20px;
-    max-width: 860px;
+    padding: 28px 20px;
+    max-width: 880px;
     margin: 0 auto;
 }
 
-section { margin-bottom: 24px; }
+main a { color: var(--bordo); }
+main a:hover { color: var(--ouro-escuro); }
+
+section { margin-bottom: 28px; }
+
+article {
+    background: var(--rotulo);
+    border: 1px solid var(--areia);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(122, 30, 46, 0.07);
+}
 
 h1, h2, h3 {
     font-family: Marcellus, Georgia, serif;
-    color: var(--adega);
+    color: var(--bordo-escuro);
     line-height: 1.2;
 }
+
+h1 { font-size: 2.1rem; }
 
 .rotulo {
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--oxblood);
-    margin: 0 0 8px 0;
+    letter-spacing: 0.16em;
+    color: var(--ouro-escuro);
+    margin: 0 0 10px 0;
     font-weight: 700;
 }
 
 img {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     display: block;
+    border: 1px solid var(--areia);
 }
 
-iframe { max-width: 100%; border: 0; border-radius: 10px; }
+iframe { max-width: 100%; border: 1px solid var(--areia); border-radius: 12px; }
 
 table {
     border-collapse: collapse;
     width: 100%;
     background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(122, 30, 46, 0.08);
 }
 
 th, td {
-    border: 1px solid #c9bfa9;
-    padding: 8px;
+    border: 1px solid #e3d2ae;
+    padding: 10px 12px;
     text-align: left;
 }
 
-th { background: var(--parreira); color: #fff; }
-
-footer {
-    background: var(--adega);
-    color: #f3e9d4;
-    padding: 16px;
-    text-align: center;
+th {
+    background: linear-gradient(135deg, #5c1420, #7a1e2e);
+    color: #fbeecd;
+    border-color: #5c1420;
 }
 
-footer a { color: var(--safra); }
+footer {
+    background: linear-gradient(135deg, #2a0b10 0%, #5c1420 60%, #7a1e2e 100%);
+    color: #f3e6c8;
+    padding: 22px 16px;
+    text-align: center;
+    border-top: 4px solid var(--safra);
+}
+
+footer a { color: var(--safra-clara); }
 
 .menu { margin: 0; }
 
 .destaque {
-    background: var(--rotulo);
-    padding: 20px;
-    border: 1px solid #d8c9a6;
-    border-radius: 14px;
+    background: linear-gradient(180deg, #fffdf4 0%, #fbefd8 100%);
+    padding: 28px;
+    border: 1px solid var(--areia);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(122, 30, 46, 0.12);
 }
 
-.acoes { margin-top: 16px; }
+.acoes { margin-top: 18px; }
 
 .btn, .btn-sec {
     display: inline-block;
-    padding: 10px 18px;
+    padding: 11px 22px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700;
-    border: 2px solid var(--oxblood);
+    border: 2px solid var(--bordo-escuro);
 }
 
-.btn { background: var(--oxblood); color: #fff; }
-.btn-sec { color: var(--oxblood); background: transparent; }
+.btn {
+    background: linear-gradient(135deg, #7a1e2e, #5c1420);
+    color: #fff3d9;
+}
+.btn-sec { color: var(--bordo); background: #fff8e8; }
 
 form input, form textarea {
     width: 100%;
     max-width: 460px;
-    padding: 10px;
-    border: 1px solid #b7a98c;
-    border-radius: 8px;
+    padding: 11px 12px;
+    border: 1px solid var(--areia);
+    border-radius: 10px;
     font: inherit;
+    background: #fff;
 }
 
 form button.btn {
@@ -141,6 +179,7 @@ form button.btn {
 }
 
 .lista-vinhos { padding-left: 20px; }
+.lista-vinhos li::marker { color: var(--bordo); }
 
 /* Efeitos do Check-Point 02 em arquivo separado */
 @import url("efeitos.css");

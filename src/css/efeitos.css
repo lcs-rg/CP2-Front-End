@@ -1,8 +1,8 @@
 /* ============================================================
    Vinheria Agnello — efeitos.css (Check-Point 02)
-   Direção: "rótulo de adega" — sóbrio, dourado-safra sobre oxblood.
+   Direção: "bordô rico" — dourado vivo #d9a441 sobre bordô #7a1e2e.
    Risco assumido: menu com sublinhado que "enche como vinho
-   na taça" + selo de rolha em rotação lenta no .destaque.
+   na taça" + selo de rolha no .destaque.
    ============================================================ */
 
 /* ---------- 1) TRANSIÇÕES (base de tudo interativo) ---------- */
@@ -20,47 +20,47 @@ form input, form textarea, form button {
 
 /* 2a) :hover — menu, botões, cards e imagens */
 .menu a:hover {
-    color: #f3d67c;
+    color: #ffe9a8;
 }
 .btn:hover {
-    background-color: #3f1219;
-    box-shadow: 0 8px 20px rgba(30, 12, 14, 0.25);
+    background: linear-gradient(135deg, #4a0f1b, #2a0b10);
+    box-shadow: 0 10px 24px rgba(74, 15, 27, 0.4);
     transform: translateY(-2px);
 }
 .btn-sec:hover {
-    background-color: #5e1b25;
-    color: #fff;
+    background-color: #7a1e2e;
+    color: #fff3d9;
     transform: translateY(-2px);
 }
 article:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(30, 12, 14, 0.12);
+    box-shadow: 0 12px 28px rgba(122, 30, 46, 0.18);
 }
 main img:hover {
     transform: scale(1.03) translateY(-2px);
-    box-shadow: 0 12px 28px rgba(30, 12, 14, 0.22);
+    box-shadow: 0 14px 30px rgba(74, 15, 27, 0.3);
 }
 
 /* 2b) :focus-visible — acessibilidade no form e navegação */
 a:focus-visible, button:focus-visible,
 input:focus-visible, textarea:focus-visible {
-    outline: 3px solid #c29a2b;
+    outline: 3px solid #d9a441;
     outline-offset: 2px;
 }
 form input:focus, form textarea:focus {
-    border-color: #5e1b25;
-    box-shadow: 0 0 0 3px rgba(194, 154, 43, 0.25);
+    border-color: #7a1e2e;
+    box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.3);
 }
 
 /* 2c) :nth-child — tabela e listas ganham ritmo de rótulo */
 table tr:nth-child(even) {
-    background-color: #f6efdb;
+    background-color: #fdf3dd;
 }
 table tr:nth-child(odd) {
     background-color: #ffffff;
 }
 .lista-vinhos li:nth-child(2n) {
-    color: #5e1b25;
+    color: #7a1e2e;
     font-weight: 600;
 }
 
@@ -70,7 +70,7 @@ table tr:nth-child(odd) {
 }
 .lista-vinhos li:not(:last-child) {
     margin-bottom: 6px;
-    border-bottom: 1px dashed #d8c9a6;
+    border-bottom: 1px dashed #e7d3ac;
     padding-bottom: 6px;
 }
 
@@ -88,7 +88,7 @@ table tr:nth-child(odd) {
     bottom: 0;
     height: 2px;
     width: 100%;
-    background: #c29a2b;
+    background: linear-gradient(90deg, #d9a441, #f0be55);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s ease;
@@ -109,20 +109,20 @@ table tr:nth-child(odd) {
     top: 14px;
     right: -38px;
     transform: rotate(35deg);
-    background: #5e1b25;
-    color: #f3e9d4;
+    background: linear-gradient(135deg, #7a1e2e, #4a0f1b);
+    color: #ffedb8;
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 4px 44px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 h2::before {
     content: "";
     display: inline-block;
     width: 22px;
     height: 3px;
-    background: #c29a2b;
+    background: linear-gradient(90deg, #d9a441, #f0be55);
     margin-right: 8px;
     vertical-align: middle;
     border-radius: 2px;
@@ -130,8 +130,8 @@ h2::before {
 
 /* 3c) ::selection + ::first-letter — texto com gosto de tinta de adega */
 ::selection {
-    background: #5e1b25;
-    color: #f6efdb;
+    background: #7a1e2e;
+    color: #fff6df;
 }
 .texto-longo p:first-of-type::first-letter {
     font-family: Marcellus, Georgia, serif;
@@ -139,7 +139,7 @@ h2::before {
     float: left;
     line-height: 1;
     padding-right: 8px;
-    color: #5e1b25;
+    color: #7a1e2e;
 }
 
 /* ---------- 4) ANIMAÇÕES @keyframes ---------- */
@@ -155,8 +155,8 @@ h2::before {
 }
 
 @keyframes pulseCta {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(194, 154, 43, 0.45); }
-    50% { box-shadow: 0 0 0 8px rgba(194, 154, 43, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217, 164, 65, 0.5); }
+    50% { box-shadow: 0 0 0 8px rgba(217, 164, 65, 0); }
 }
 
 .destaque {

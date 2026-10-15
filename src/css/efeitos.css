@@ -1,8 +1,9 @@
 /* ============================================================
    Vinheria Agnello — efeitos.css (Check-Point 02)
-   Direção: "bordô rico" — dourado vivo #d9a441 sobre bordô #7a1e2e.
+   Direção: "bordô rico" — dourado #d9a441 sobre bordô #7a1e2e,
+   pergaminho suave #e7d9bc (sem brancos que agridem os olhos).
    Risco assumido: menu com sublinhado que "enche como vinho
-   na taça" + selo de rolha no .destaque.
+   na taça" + selo do .destaque com flutuação contínua.
    ============================================================ */
 
 /* ---------- 1) TRANSIÇÕES (base de tudo interativo) ---------- */
@@ -24,40 +25,41 @@ form input, form textarea, form button {
 }
 .btn:hover {
     background: linear-gradient(135deg, #4a0f1b, #2a0b10);
-    box-shadow: 0 10px 24px rgba(74, 15, 27, 0.4);
+    box-shadow: 0 8px 18px rgba(74, 15, 27, 0.35);
     transform: translateY(-2px);
 }
 .btn-sec:hover {
     background-color: #7a1e2e;
-    color: #fff3d9;
+    color: #f3e6c8;
     transform: translateY(-2px);
 }
 article:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(122, 30, 46, 0.18);
+    box-shadow: 0 10px 22px rgba(74, 15, 27, 0.16);
 }
 main img:hover {
     transform: scale(1.03) translateY(-2px);
-    box-shadow: 0 14px 30px rgba(74, 15, 27, 0.3);
+    box-shadow: 0 12px 24px rgba(74, 15, 27, 0.25);
 }
 
 /* 2b) :focus-visible — acessibilidade no form e navegação */
 a:focus-visible, button:focus-visible,
 input:focus-visible, textarea:focus-visible {
-    outline: 3px solid #d9a441;
+    outline: 3px solid #a5761f;
     outline-offset: 2px;
 }
 form input:focus, form textarea:focus {
     border-color: #7a1e2e;
-    box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.3);
+    box-shadow: 0 0 0 3px rgba(165, 118, 31, 0.25);
+    background: #fbf3dd;
 }
 
 /* 2c) :nth-child — tabela e listas ganham ritmo de rótulo */
 table tr:nth-child(even) {
-    background-color: #fdf3dd;
+    background-color: #eddfc0;
 }
 table tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #f6edd6;
 }
 .lista-vinhos li:nth-child(2n) {
     color: #7a1e2e;
@@ -70,7 +72,7 @@ table tr:nth-child(odd) {
 }
 .lista-vinhos li:not(:last-child) {
     margin-bottom: 6px;
-    border-bottom: 1px dashed #e7d3ac;
+    border-bottom: 1px dashed #c9b183;
     padding-bottom: 6px;
 }
 
@@ -110,19 +112,20 @@ table tr:nth-child(odd) {
     right: -38px;
     transform: rotate(35deg);
     background: linear-gradient(135deg, #7a1e2e, #4a0f1b);
-    color: #ffedb8;
+    color: #f3e6c8;
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 4px 44px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: flutuarSelo 6s ease-in-out infinite;
 }
 h2::before {
     content: "";
     display: inline-block;
     width: 22px;
     height: 3px;
-    background: linear-gradient(90deg, #d9a441, #f0be55);
+    background: linear-gradient(90deg, #a5761f, #d9a441);
     margin-right: 8px;
     vertical-align: middle;
     border-radius: 2px;
@@ -131,7 +134,7 @@ h2::before {
 /* 3c) ::selection + ::first-letter — texto com gosto de tinta de adega */
 ::selection {
     background: #7a1e2e;
-    color: #fff6df;
+    color: #f3e6c8;
 }
 .texto-longo p:first-of-type::first-letter {
     font-family: Marcellus, Georgia, serif;
@@ -146,7 +149,7 @@ h2::before {
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(14px);
+        transform: translateY(18px);
     }
     to {
         opacity: 1;
@@ -155,25 +158,31 @@ h2::before {
 }
 
 @keyframes pulseCta {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(217, 164, 65, 0.5); }
-    50% { box-shadow: 0 0 0 8px rgba(217, 164, 65, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(165, 118, 31, 0.35); }
+    50% { box-shadow: 0 0 0 6px rgba(165, 118, 31, 0); }
+}
+
+/* Animação contínua e visível: o selo flutua devagar no canto do destaque */
+@keyframes flutuarSelo {
+    0%, 100% { transform: rotate(35deg) translateY(0); }
+    50% { transform: rotate(33deg) translateY(3px); }
 }
 
 .destaque {
-    animation: fadeUp 0.7s ease both;
+    animation: fadeUp 0.8s ease both;
 }
 article {
-    animation: fadeUp 0.6s ease both;
+    animation: fadeUp 0.7s ease both;
 }
-article:nth-of-type(2) { animation-delay: 0.08s; }
-article:nth-of-type(3) { animation-delay: 0.16s; }
+article:nth-of-type(2) { animation-delay: 0.1s; }
+article:nth-of-type(3) { animation-delay: 0.2s; }
 .btn {
-    animation: pulseCta 2.8s ease-in-out infinite;
+    animation: pulseCta 3s ease-in-out infinite;
 }
 
-/* ---------- 5) TRANSFORMAÇÕES (scale + translate) ---------- */
-/* scale(1.03) nas imagens + translateY(-4px) nos cards já acima;
-   reforço sóbrio extra: */
+/* ---------- 5) TRANSFORMAÇÕES (scale + translate + rotate) ---------- */
+/* scale(1.03) nas imagens, translateY(-4px/-2px) nos cards/botões,
+   rotate(35deg) no selo + rotate da flutuação — 3 tipos no total */
 table tr:hover {
     transform: translateY(-1px);
 }

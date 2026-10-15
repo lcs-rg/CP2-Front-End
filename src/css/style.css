@@ -1,0 +1,143 @@
+/* Vinheria Agnello — base (CP2) */
+:root {
+    --adega: #1e0c0e;
+    --oxblood: #5e1b25;
+    --safra: #c29a2b;
+    --rotulo: #efe5ce;
+    --parreira: #66785b;
+    --tinta: #2b2320;
+    --fundo: #faf7f2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: "Source Sans 3", Arial, sans-serif;
+    margin: 0;
+    background: var(--fundo);
+    color: var(--tinta);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--adega);
+    color: #fff;
+    padding: 16px;
+}
+
+#topo {
+    margin: 0;
+    font-family: Marcellus, Georgia, serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 12px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+main {
+    padding: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+section { margin-bottom: 24px; }
+
+h1, h2, h3 {
+    font-family: Marcellus, Georgia, serif;
+    color: var(--adega);
+    line-height: 1.2;
+}
+
+.rotulo {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--oxblood);
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+iframe { max-width: 100%; border: 0; border-radius: 10px; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+}
+
+th, td {
+    border: 1px solid #c9bfa9;
+    padding: 8px;
+    text-align: left;
+}
+
+th { background: var(--parreira); color: #fff; }
+
+footer {
+    background: var(--adega);
+    color: #f3e9d4;
+    padding: 16px;
+    text-align: center;
+}
+
+footer a { color: var(--safra); }
+
+.menu { margin: 0; }
+
+.destaque {
+    background: var(--rotulo);
+    padding: 20px;
+    border: 1px solid #d8c9a6;
+    border-radius: 14px;
+}
+
+.acoes { margin-top: 16px; }
+
+.btn, .btn-sec {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--oxblood);
+}
+
+.btn { background: var(--oxblood); color: #fff; }
+.btn-sec { color: var(--oxblood); background: transparent; }
+
+form input, form textarea {
+    width: 100%;
+    max-width: 460px;
+    padding: 10px;
+    border: 1px solid #b7a98c;
+    border-radius: 8px;
+    font: inherit;
+}
+
+form button.btn {
+    cursor: pointer;
+    font: inherit;
+}
+
+.lista-vinhos { padding-left: 20px; }

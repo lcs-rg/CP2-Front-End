@@ -141,3 +141,6 @@ form button.btn {
 }
 
 .lista-vinhos { padding-left: 20px; }
+
+/* Efeitos do Check-Point 02 em arquivo separado */
+@import url("efeitos.css");

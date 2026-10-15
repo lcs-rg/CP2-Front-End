@@ -171,6 +171,14 @@ h2::before {
 .destaque {
     animation: fadeUp 0.8s ease both;
 }
+/* Entrada padronizada: TODAS as páginas animam as seções em cascata,
+   não só a inicial (o .destaque mantém a regra própria acima) */
+main > section {
+    animation: fadeUp 0.7s ease both;
+}
+main > section:nth-of-type(2) { animation-delay: 0.1s; }
+main > section:nth-of-type(3) { animation-delay: 0.2s; }
+main > section:nth-of-type(4) { animation-delay: 0.3s; }
 article {
     animation: fadeUp 0.7s ease both;
 }
